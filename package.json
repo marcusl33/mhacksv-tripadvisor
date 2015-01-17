@@ -1,0 +1,24 @@
+{
+  "name": "mhacks",
+  "version": "1.0.0",
+  "description": "mhacks trip advisor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcusl33/mhacksv-tripadvisor.git"
+  },
+  "author": "Rohan Sikdar and Marcus Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcusl33/mhacksv-tripadvisor/issues"
+  },
+  "homepage": "https://github.com/marcusl33/mhacksv-tripadvisor",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.11.0",
+    "url": "^0.10.2"
+  }
+}
