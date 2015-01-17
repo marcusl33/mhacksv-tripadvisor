@@ -350,7 +350,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           var dur = all_cities[1][i];
           list_of_places.push(new place(loc, dur));
       };
-      window.location.assign("/plan?places=" + all_cities + '&time_range=' + time_range)
+      window.location.assign("/plan?places=" + all_cities[0] + '&duration=' + all_cities[1] + '&time_range=' + time_range)
     }
 
 		</script>
