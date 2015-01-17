@@ -10,8 +10,13 @@
         height: 100%;
         margin: 20px;
         padding: 0px;
-		display: none;
+		/*display: none;*/
       }
+
+      #map-canvas {
+      	display: none;
+      }
+
       .controls {
         margin-top: 16px;
         border: 1px solid transparent;
@@ -81,7 +86,7 @@ function initialize() {
   // Create the search box and link it to the UI element.
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   var searchBox = new google.maps.places.SearchBox(
     /** @type {HTMLInputElement} */(input));
@@ -118,7 +123,9 @@ function initialize() {
         title: place.name,
         position: place.geometry.location
       });
-
+      var city = marker.title;
+      document.getElementById('city').innerHTML = city;
+      document.getElementById('map-canvas').remove();
       markers.push(marker);
 
       bounds.extend(place.geometry.location);
@@ -146,19 +153,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </style>
   </head>
   <body>
-  	<div id='title'> Enter city </div>
-
-	    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  	<div id='title'> <h1 id = 'city'> Enter city </h1></div>
+    	<input id="pac-input" class="controls" type="text" placeholder="Enter City">
 	    <div id="map-canvas"></div>
 
-		<script type="text/javascript">
-		$('#pac-input').submit(function(){
-			var location = $('#pac-input').val();
-			document.getElementById('title').innerHTML = location;
-			return false;
-		});
-			// var location = $('#pac-input').val();
-			// document.getElementById('title').innerHTML = location;
 		</script>
   </body>
 </html>
