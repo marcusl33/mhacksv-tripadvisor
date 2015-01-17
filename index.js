@@ -8,13 +8,14 @@ var bodyparser = require('body-parser');
 
 
 app.get('/', function(req, res) {
+	sess = req.session;
 	res.sendFile(__dirname + '/main.html');
 });
 
 app.get('/details', function(req, res) {
-	var location = req.query.location;
-	var duration = req.query.duration;
-	res.end(location + ' ' + duration);
+	// var location = req.query.location;
+	// var duration = req.query.duration;
+	res.sendFile(__dirname + '/details.html');
 });
 
 app.listen(3000, function(){

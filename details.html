@@ -9,6 +9,35 @@
 		<title>Details</title>
 	</head>
 	<body>
+		<script type="text/javascript">
+			function parseURL(url) {
+			    var parser = document.createElement('a'),
+			        searchObject = {},
+			        queries, split, i;
+			    // Let the browser do the work
+			    parser.href = url;
+			    // Convert query string to object
+			    queries = parser.search.replace(/^\?/, '').split('&');
+			    for( i = 0; i < queries.length; i++ ) {
+			        split = queries[i].split('=');
+			        searchObject[split[0]] = split[1];
+			    }
+			    return {
+			        protocol: parser.protocol,
+			        host: parser.host,
+			        hostname: parser.hostname,
+			        port: parser.port,
+			        pathname: parser.pathname,
+			        search: parser.search,
+			        searchObject: searchObject,
+			        hash: parser.hash
+			    };
+			}
+			var data = parseURL(document.URL);
+			var location_new = data.searchObject.location.replace('+',' ');
+			var duration_new = data.searchObject.duration;
+		</script>
+		<h1 id= 'test'>test</h1>
 		<h1>How many days?</h1>
 		<form action=''>
   
