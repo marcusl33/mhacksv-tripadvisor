@@ -24,7 +24,8 @@
 
       .controls {
         margin-top: 16px;
-        margin-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
         border: 1px solid transparent;
         border-radius: 2px 0 0 2px;
         box-sizing: border-box;
@@ -59,6 +60,14 @@
         font-family: Roboto;
         font-size: 13px;
         font-weight: 300;
+      }
+
+      a {
+        margin-right: 5px;
+        font-size: 15px;
+        font-weight: 300;
+        font-family: Roboto;
+      }
       }
 }
 
@@ -196,68 +205,97 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </style>
   </head>
   <body>
+    <div id='title'> <h1 id = 'timerange'>Daily Time Range</h1></div>
+    <ul style="list-style-type:none">
+    <select class= "controls" type="text">
+    <option value="" disabled selected>Start</option>
+    <option value=8>8 a.m.</option>
+    <option value=9>9 a.m.</option>
+    <option value=10>10 a.m.</option>
+    <option value=11>11 a.m.</option>
+    <option value=12>12 a.m.</option>
+    </select>   <a>till</a>
+    <select class= "controls" type="text">
+    <option value="" disabled selected>End</option>
+    <option value=20>8 p.m.</option>
+    <option value=21>9 p.m.</option>
+    <option value=22>10 p.m.</option>
+    <option value=23>11 p.m.</option>
+    <option value=24>12 p.m.</option>
+    </select>
+    </ul>
+
+    <div id='title'> <h1 id = 'accomodation'>Place of Accomodation</h1></div>
+      <ul style="list-style-type:none">
+      <input id="pac-input" class="controls" type="text" placeholder="Enter Location">
+      </ul>
+
   	<div id='title'> <h1 id = 'city'>Places of Interest</h1></div>
+
     <ul style="list-style-type:none">
     		<li><input id="pac-input" class="controls" type="text" placeholder="Enter Location"><select class="controls" type="text">
-  <option value="1-hour">1 hour</option>
-  <option value="2-hours">2 hours</option>
-  <option value="3-hours">3 hours</option>
-  <option value="4-hours">4 hours</option>
-  <option value="5-hours">5 hours</option>
-  <option value="6-hours">6 hours</option>
-  <option value="9-hours">9 hours</option>
-  <option value="12-hours">12 hours</option>
-  <option value="Entire-day">Entire day</option>
-</select></li>
+          <option value="" disabled selected>How long do you wanna be here?</option>
+          <option value=1>1 hour</option>
+          <option value=2>2 hours</option>
+          <option value=3>3 hours</option>
+          <option value=4>4 hours</option>
+          <option value=5>5 hours</option>
+          <option value=6>6 hours</option>
+          <option value=9>9 hours</option>
+          <option value=12>12 hours</option>
+          <option value="Entire">Entire day</option>
+          </select></li>
     		<li><input id="pac-input2" class="controls" type="text" placeholder="Enter Location"><select class="controls" type="text">
-  <option value="1-hour">1 hour</option>
-  <option value="2-hours">2 hours</option>
-  <option value="3-hours">3 hours</option>
-  <option value="4-hours">4 hours</option>
-  <option value="5-hours">5 hours</option>
-  <option value="6-hours">6 hours</option>
-  <option value="9-hours">9 hours</option>
-  <option value="12-hours">12 hours</option>
-  <option value="Entire-day">Entire day</option>
-</select></li>
+          <option value="" disabled selected>How long do you wanna be here?</option>
+          <option value="1-hour">1 hour</option>
+          <option value="2-hours">2 hours</option>
+          <option value="3-hours">3 hours</option>
+          <option value="4-hours">4 hours</option>
+          <option value="5-hours">5 hours</option>
+          <option value="6-hours">6 hours</option>
+          <option value="9-hours">9 hours</option>
+          <option value="12-hours">12 hours</option>
+          <option value="Entire-day">Entire day</option>
+          </select></li>
         <li><input id="pac-input3" class="controls" type="text" placeholder="Enter Location"><select class="controls" type="text">
-  <option value="1-hour">1 hour</option>
-  <option value="2-hours">2 hours</option>
-  <option value="3-hours">3 hours</option>
-  <option value="4-hours">4 hours</option>
-  <option value="5-hours">5 hours</option>
-  <option value="6-hours">6 hours</option>
-  <option value="9-hours">9 hours</option>
-  <option value="12-hours">12 hours</option>
-  <option value="Entire-day">Entire day</option>
-</select></li>
+          <option value="" disabled selected>How long do you wanna be here?</option>
+          <option value="1-hour">1 hour</option>
+          <option value="2-hours">2 hours</option>
+          <option value="3-hours">3 hours</option>
+          <option value="4-hours">4 hours</option>
+          <option value="5-hours">5 hours</option>
+          <option value="6-hours">6 hours</option>
+          <option value="9-hours">9 hours</option>
+          <option value="12-hours">12 hours</option>
+          <option value="Entire-day">Entire day</option>
+          </select></li>
         <li><input id="pac-input4" class="controls" type="text" placeholder="Enter Location"><select class="controls" type="text">
-  <option value="1-hour">1 hour</option>
-  <option value="2-hours">2 hours</option>
-  <option value="3-hours">3 hours</option>
-  <option value="4-hours">4 hours</option>
-  <option value="5-hours">5 hours</option>
-  <option value="6-hours">6 hours</option>
-  <option value="9-hours">9 hours</option>
-  <option value="12-hours">12 hours</option>
-  <option value="Entire-day">Entire day</option>
-</select></li>
+          <option value="" disabled selected>How long do you wanna be here?</option>
+          <option value="1-hour">1 hour</option>
+          <option value="2-hours">2 hours</option>
+          <option value="3-hours">3 hours</option>
+          <option value="4-hours">4 hours</option>
+          <option value="5-hours">5 hours</option>
+          <option value="6-hours">6 hours</option>
+          <option value="9-hours">9 hours</option>
+          <option value="12-hours">12 hours</option>
+          <option value="Entire-day">Entire day</option>
+          </select></li>
         <li><input id="pac-input5" class="controls" type="text" placeholder="Enter Location"><select class="controls" type="text">
-  <option value="1-hour">1 hour</option>
-  <option value="2-hours">2 hours</option>
-  <option value="3-hours">3 hours</option>
-  <option value="4-hours">4 hours</option>
-  <option value="5-hours">5 hours</option>
-  <option value="6-hours">6 hours</option>
-  <option value="9-hours">9 hours</option>
-  <option value="12-hours">12 hours</option>
-  <option value="Entire-day">Entire day</option>
-</select></li>
+          <option value="" disabled selected>How long do you wanna be here?</option>
+          <option value="1-hour">1 hour</option>
+          <option value="2-hours">2 hours</option>
+          <option value="3-hours">3 hours</option>
+          <option value="4-hours">4 hours</option>
+          <option value="5-hours">5 hours</option>
+          <option value="6-hours">6 hours</option>
+          <option value="9-hours">9 hours</option>
+          <option value="12-hours">12 hours</option>
+          <option value="Entire-day">Entire day</option>
+          </select></li>
 	    <div id="map-canvas"></div>
     </ul>
 
-	    <div id= 'hours'>
-	    	<h1>How many days?</h1>
 		<form action=''>
   
     		<input id='m' autocomplete = 'off' autofocus /><button>Send</button>
