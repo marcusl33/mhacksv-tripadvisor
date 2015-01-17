@@ -49,7 +49,7 @@
         };
     }
     var data = parseURL(document.URL);
-    var places = data.searchObject.places.replace('/%20/g'," ").split(',');
+    var places = data.searchObject.places.replace(/%20/g," ").split('||');
     var duration = data.searchObject.duration;
     var time_range = data.searchObject.time_range;
 
@@ -57,11 +57,11 @@ var map;
 var geocoder;
 var bounds = new google.maps.LatLngBounds();
 var markersArray = [];
-
-var origin1 = '2400 Durant Avenue, Berkeley, CA';
-var origin2 = '2400 Durant Avenue, Berkeley, CA';
-var destinationA = 'San Francisco International Airport, San Francisco, CA';
-var destinationB = 'San Francisco International Airport, San Francisco, CA';
+console.log(places);
+// var origin1 = '2400 Durant Avenue, Berkeley, CA';
+// var origin2 = '2400 Durant Avenue, Berkeley, CA';
+// var destinationA = 'San Francisco International Airport, San Francisco, CA';
+// var destinationB = 'San Francisco International Airport, San Francisco, CA';
 
 var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
 var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000';
@@ -79,8 +79,8 @@ function calculateDistances() {
   var service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
     {
-      origins: [origin1, origin2],
-      destinations: [destinationA, destinationB],
+      origins: places,
+      destinations: places,
       travelMode: google.maps.TravelMode.DRIVING,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
       avoidHighways: false,
